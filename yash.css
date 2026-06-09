@@ -174,6 +174,8 @@ nav.scrolled {
 .badge {
     display: inline-flex;
     align-items: center;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
     gap: 0.5rem;
     padding: 0.7rem 1.5rem;
     background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
@@ -205,10 +207,11 @@ h1 {
 }
 
 .hero-description {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: #94a3b8;
     margin-bottom: 2rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    max-width: 650px;
 }
 
 .stats {
@@ -432,6 +435,7 @@ h2 {
     font-size: 3.5rem;
     font-weight: 900;
     margin-bottom: 3rem;
+    max-width: 900px;
     line-height: 1.2;
 }
 
@@ -512,31 +516,44 @@ h2 {
 }
 
 .skill-tag {
-    padding: 0.6rem 1.2rem;
-    background: rgba(10, 14, 39, 0.6);
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #cbd5e1;
     transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(0, 212, 255, 0.15);
     border-color: rgba(0, 212, 255, 0.6);
     color: #00d4ff;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
 }
 
 .experience-card,
 .project-card {
+    position: relative;
+    overflow: hidden;
     padding: 2.5rem;
     background: rgba(15, 20, 45, 0.3);
     border: 1px solid rgba(0, 212, 255, 0.2);
     border-radius: 20px;
     margin-bottom: 2rem;
     transition: all 0.3s ease;
+}
+
+.experience-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #00d4ff, #00ff88);
 }
 
 .experience-card:hover,
@@ -557,6 +574,8 @@ h2 {
 .exp-title h3 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .exp-company {
@@ -565,6 +584,11 @@ h2 {
     gap: 1rem;
     font-size: 1.1rem;
     color: #94a3b8;
+}
+
+.exp-company span:first-child {
+    color: #00d4ff;
+    font-weight: 700;
 }
 
 .exp-badge {
@@ -687,10 +711,17 @@ h2 {
 
 .contact {
     text-align: center;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(0, 212, 255, 0.1),
+        rgba(0, 255, 136, 0.1)
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 30px;
     padding: 4rem 2rem;
     border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.08);
 }
 
 .contact h2 {
@@ -698,9 +729,11 @@ h2 {
 }
 
 .contact-description {
-    font-size: 1.2rem;
-    color: #94a3b8;
-    margin-bottom: 3rem;
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 750px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
 }
 
 .contact-grid {
@@ -722,9 +755,9 @@ h2 {
 }
 
 .contact-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 212, 255, 0.5);
-    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+    transform: translateY(-8px);
+    border-color: rgba(0, 212, 255, 0.6);
+    box-shadow: 0 15px 45px rgba(0, 212, 255, 0.25);
 }
 
 .contact-icon {
